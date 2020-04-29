@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Author : nimula+github@gmail.com
 
-usage="Usage: $0 [-h] [-s <source directory>] [build|run|create]"
+usage="Usage: $0 [-h] [-s <source directory>] [-t <image name>] [build|run|create]"
 image=${PWD##*/}
 
 if [ "$(command -v podman)" ]; then
@@ -98,7 +98,7 @@ while getopts :hs:t: option; do
       echo "$usage"
       echo
       echo "Available Commands:"
-      echo "  build                   Execute build script mk.sh"
+      echo "  build                   Execute build script mk.sh in container"
       echo "  run                     Run container"
       echo "  create                  Create container image by Dockerfile"
       echo "Options"
